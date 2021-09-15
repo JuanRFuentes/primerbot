@@ -5,9 +5,8 @@
 //   creditos:
 //   _Juan R Fuentes_
 //============ Client ============\\
-const { WAConnection,
-       Mimetype,
-       MessageType } = require('@adiwajshing/baileys');
+
+const { WAConnection, MessageType, Mimetype, } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const prefix = '.'
 
@@ -91,6 +90,7 @@ switch (command) {
 case 'bot':
 client.sendMessage(from, 'Hola,felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
 break
+              
 case 'foto':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
