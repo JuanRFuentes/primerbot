@@ -89,7 +89,7 @@ case "paxuDk3LoZENYGIbqq0jI7+xHaEaDfGaWGtVJt/Vyzg=":
 					opcion = redes[Math.floor(Math.random() * redes.length)]
 reply(`*Si no ves la lista de comandos, o no puedes hacer click en el boton, desactiva la funcion de hacer el texto seleccionable en las configuraciones de tu whatsapp Mod.*
 _Si siges teniendo problemas, usa el menu antiguo, escribiendo: ${prefix}menuofc_`)
-let newmenu = samu330.prepareMessageFromContent(from, {
+let newmenu = client.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "*✍🏻MENU | 🌬Vico| Juan R Fuentes🪀*",
 "description": `\n➫ြ𝚜ᷤ𝚊ͣ𝚖ͫ𝚞𝉄𖾔𖾔𖽙😈.li Oℱịcιɑl.li
@@ -103,12 +103,12 @@ _Tipo de usuario:_ ${tipoDeUsr}
 🕐Son las *${hora}*\n\n🍃Hoy es *${week1}  ${calender1}*
 							
 ⍣ *BOT juanraa INFO* ⍣
-${samu}◦ 🌐Navegador :${samu} *${samu330.browserDescription[1]}*
-${samu}◦ 📡servidor :${samu} *${samu330.browserDescription[0]}*
-${samu}◦ ✅version :${samu} *${samu330.browserDescription[2]}*
-${samu}◦ 🚄Velocidad :${samu} *${process.uptime()}*
-${samu}◦ 📲Sistema operativo :${samu} *${samu330.user.phone.device_manufacturer}*
-${samu}◦ 🪀version de${samu} *WhatsApp* : *${samu330.user.phone.wa_version}*
+${sam}◦ 🌐Navegador :${sam} *${client.browserDescription[1]}*
+${sam}◦ 📡servidor :${sam} *${client.browserDescription[0]}*
+${sam}◦ ✅version :${sam} *${client.browserDescription[2]}*
+${sam}◦ 🚄Velocidad :${sam} *${process.uptime()}*
+${sam}◦ 📲Sistema operativo :${sam} *${client.user.phone.device_manufacturer}*
+${sam}◦ 🪀version de${sam} *WhatsApp* : *${client.user.phone.wa_version}*
 ༶•┈┈⛧┈♛ ♛┈⛧┈┈•༶
 *🪀Grupo de Soporte y ayuda:*
 https://chat.whatsapp.com/BGTQNDzESmEJr2cCJlccWV
@@ -169,7 +169,7 @@ ${opcion}`,
 							]
 						}
 					}, {})
-				samu330.relayWAMessage(newmenu, {waitForAck: true})
+				client.relayWAMessage(newmenu, {waitForAck: true})
 				break
 }
 
