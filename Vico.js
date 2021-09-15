@@ -1,10 +1,4 @@
-const { 
-  WAConnection,
-  MessageType,
-  
-  MessageOptions,
-  Mimetype,
-  WALocationMessage } = require('@adiwajshing/baileys');
+const { WAConnection, MessageType } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const prefix = '.'
 
@@ -18,7 +12,7 @@ async function iniciar () {
         })
 
 //crear un archivo Json para guardar información: ID del cliente, Token y Keys del cliente y del SERVER.
-        fs.existsSync('./Vico.json') && client.loadAuthInfo('./Vico.json')
+        fs.existsSync('./Samu330.json') && client.loadAuthInfo('./Samu330.json')
 
 //Conectando o reconectando
         client.on('connecting', () => {
@@ -30,7 +24,7 @@ async function iniciar () {
         console.log('Conectado exitosamente :D')
         })
         await client.connect({timeoutMs: 30*1000})
-        fs.writeFileSync('./Vico.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+        fs.writeFileSync('./Samu330.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
         
 
 client.on('chat-update', async (sam) => {
