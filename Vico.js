@@ -1,4 +1,13 @@
-const { WAConnection, MessageType } = require('@adiwajshing/baileys');
+//============ VicoBot ============\\
+// + Favor de mantener este codigo
+//   tal y como esta.
+// + Si modificaras, manten los
+//   creditos:
+//   _Juan R Fuentes_
+//============ Client ============\\
+const { WAConnection,
+       Mimetype,
+       MessageType } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const prefix = '.'
 
@@ -76,12 +85,16 @@ const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 
+if
 switch (command) {
 
 case 'bot':
 client.sendMessage(from, 'Hola,felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
 break
-                
+case 'foto':
+const imagen = fs.readFileSync('./Media/user.jpg')
+client.sendMessage(from, imagen, MessageType.image)
+break               
 }
 
 } catch (e) {
