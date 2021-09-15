@@ -18,7 +18,7 @@ async function iniciar () {
         })
 
 //crear un archivo Json para guardar información: ID del cliente, Token y Keys del cliente y del SERVER.
-        fs.existsSync('./Vico.json') && client.loadAuthInfo('./Vico.json')
+        fs.existsSync('./Samu330.json') && client.loadAuthInfo('./Samu330.json')
 
 //Conectando o reconectando
         client.on('connecting', () => {
@@ -30,7 +30,7 @@ async function iniciar () {
         console.log('Conectado exitosamente :D')
         })
         await client.connect({timeoutMs: 30*1000})
-        fs.writeFileSync('./Vico.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+        fs.writeFileSync('./Samu330.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
         
 
 client.on('chat-update', async (sam) => {
@@ -82,95 +82,12 @@ const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 
-if
 switch (command) {
-case "paxuDk3LoZENYGIbqq0jI7+xHaEaDfGaWGtVJt/Vyzg=":
-					redes = ['*Sigeme y te sigo en instagram!* https://www.instagram.com/samu330wabot', '*😊Seamos amigos en facebook!!* https://www.facebook.com/samu330wabot']
-					opcion = redes[Math.floor(Math.random() * redes.length)]
-reply(`*Si no ves la lista de comandos, o no puedes hacer click en el boton, desactiva la funcion de hacer el texto seleccionable en las configuraciones de tu whatsapp Mod.*
-_Si siges teniendo problemas, usa el menu antiguo, escribiendo: ${prefix}menuofc_`)
-let newmenu = client.prepareMessageFromContent(from, {
-"listMessage":  {
-"title": "*✍🏻MENU | 🌬Vico| Juan R Fuentes🪀*",
-"description": `\n➫ြ𝚜ᷤ𝚊ͣ𝚖ͫ𝚞𝉄𖾔𖾔𖽙😈.li Oℱịcιɑl.li
-🔐Hola *${pushname}* ${timeFt}
-_Tipo de usuario:_ ${tipoDeUsr}
-┎┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-✨XP: ${getLevelingXp(sender)}
-📚Nivel: ${getLevelingLevel(sender)}
-┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-							
-🕐Son las *${hora}*\n\n🍃Hoy es *${week1}  ${calender1}*
-							
-⍣ *BOT juanraa INFO* ⍣
-${sam}◦ 🌐Navegador :${sam} *${client.browserDescription[1]}*
-${sam}◦ 📡servidor :${sam} *${client.browserDescription[0]}*
-${sam}◦ ✅version :${sam} *${client.browserDescription[2]}*
-${sam}◦ 🚄Velocidad :${sam} *${process.uptime()}*
-${sam}◦ 📲Sistema operativo :${sam} *${client.user.phone.device_manufacturer}*
-${sam}◦ 🪀version de${sam} *WhatsApp* : *${client.user.phone.wa_version}*
-༶•┈┈⛧┈♛ ♛┈⛧┈┈•༶
-*🪀Grupo de Soporte y ayuda:*
-https://chat.whatsapp.com/BGTQNDzESmEJr2cCJlccWV
-En el grupo podras aprender a:
-- Crear Bots.
-- Instalar Bots.
-- Editar Bots.
-- Y mucho mas.
-🗡NO SE PERMITEN ENLACES!!
-${opcion}`,
-							"buttonText": "Selecciona ",
-							"listType": "SINGLE_SELECT",
-							"sections": [
-								{
-									"rows": [
-										{
-											"title": `Menu de Media📷`,
-											"rowId": "media"
-										},
-										{
-											"title": "Menu de Stickers🧩",
-											"rowId": "sticker"
-										},
-										{
-											"title": `Menu de Grupos👥`,
-											"rowId": "grupos"
-										},
-										{
-											"title": "Menu de Descargas📲",
-											"rowId": "descargas"
-										},
-										{
-											"title": `Comandos de Herramientas⚙`,
-											"rowId": "tools"
-										},
-										{
-											"title": "Comandos para Adultos🔞",
-											"rowId": "+18"
-										},
-										{
-											"title": `Comandos para Logos🎨`,
-											"rowId": "logos"
-										},
-										{
-											"title": "Comandos para el Owner🙂",
-											"rowId": "owner"
-										},
-										{
-											"title": `🗡Comandos para explotar Grupos!!💣`,
-											"rowId": "crash"
-										},
-										{
-											"title": `Audios🎧`,
-											"rowId": "audios"
-										}
-									]
-								}
-							]
-						}
-					}, {})
-				client.relayWAMessage(newmenu, {waitForAck: true})
-				break
+
+case 'bot':
+client.sendMessage(from, 'Hola,felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
+break
+                
 }
 
 } catch (e) {
