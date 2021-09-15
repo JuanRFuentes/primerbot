@@ -76,23 +76,17 @@ const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 
+case 'foto':
+const imagen = fs.readFileSync('./Media/user.jpg')
+client.sendMessage(from, imagen, MessageType.image)
+break 
+        
 switch (command) {
 
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
 break
-case 'foto':
-client.sendMessage(from, stc, MessageType.text, {quoted:
-{ key: {
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": "📚𝑆𝑡𝑖𝑘𝑒𝑟 𝑚𝑒𝑛𝑢", 'jpegThumbnail': fs.readFileSync('./Media/user.jpg')}}
-}})
-addFilter(from)
-addLevelingLevel(sender, 5)		
-break            
+
 }
 
 } catch (e) {
