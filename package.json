@@ -2,9 +2,9 @@
   "name": "Nombre",
   "version": "0.0.0",
   "description": "",
-  "main": "Conexion.js",
+  "main": "Vico.js",
   "scripts": {
-  "start": "Conexion.js"
+  "start": "node Vico.js"
   },
   "dependencies": {
     "@adiwajshing/baileys": "^3.4.1"
