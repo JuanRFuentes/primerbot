@@ -1,25 +1,31 @@
-const { WAConnection } = require('@adiwajshing/baileys');
+const { WAConnection, MessageType } = require('@adiwajshing/baileys');
 const fs = require('fs');
+const prefix = '.'
 
 async function iniciar () { 
         const client = new WAConnection()
-
+//Aquí el "client" lo pueden cambiar a su gusto. Pero si cambian, tendrán que cambiar todos los "client" por el cambio que hicieron.
         client.logger.level = 'warn'
 
+//llamar al código QR
         client.on('qr', () => {
         })
 
+//crear un archivo Json para guardar información: ID del cliente, Token y Keys del cliente y del SERVER.
         fs.existsSync('./Vico.json') && client.loadAuthInfo('./Vico.json')
 
+//Conectando o reconectando
         client.on('connecting', () => {
         console.log('Conectando')
         })
 
+//La conexión fue en éxito👌🏻
         client.on('open', () => {
-        console.log('Vico by Juan R Fuentes esta Conectado exitosamente :D')
+        console.log('Conectado exitosamente :D')
         })
         await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Vico.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+        
 
 client.on('chat-update', async (sam) => {
 try {	  
@@ -82,8 +88,7 @@ break
         
 console.log(e)}
         
-})       
+})      
 }
-
 iniciar ()
 .catch (err => console.log("unexpected error: " + err))
