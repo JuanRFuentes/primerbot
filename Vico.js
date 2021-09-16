@@ -90,11 +90,18 @@ message: {
 if(body == ('Hola')){
 client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam}) 
 }
-if(body == ('audio')){        
+if(body.includes('whatsapp')){        
 const audio = fs.readFileSync('./Media/cursos/datos.ogg')
-client.sendMessage(from, audio, MessageType.audio)
+client.sendMessage(from, audio, MessageType.audio
+{quoted: sam, Mimetype: 'audio/ogg', duration: -03, ptt:true })
 }
-
+switch (command) {
+	                
+case 'whatsapp':
+const imagen = fs.readFileSync('./Media/user.jpg')
+client.sendMessage(from, imagen, MessageType.image)
+break 
+}
 switch (command) {		
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
