@@ -76,6 +76,7 @@ const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 
+
 if(body.includes('bot')){
   client.sendMessage(from,  'Hola' , MessageType.text,
   {quoted: { key: { fromMe : false,
@@ -182,6 +183,13 @@ break
 case 'foto':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
+break 
+	case 'fito':
+        const rows = [
+ {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
+ {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}
+]
+	client.sendMessage(from, rows, MessageType.list)
 break 
 }
 
