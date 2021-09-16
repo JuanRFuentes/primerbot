@@ -96,13 +96,13 @@ client.sendMessage(from, audio, MessageType.audio,
 {quoted: sam, Mimetype: 'audio/ogg', duration: -0003, ptt:true })
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
-{quoted: sam, Mimetype: 'image/jpg', caption: 'Aprende la estrategia para *VENDER tus productos o servicios utilizando WhatsApp* como herramienta de Marketing y Ventas
+{quoted: sam, caption: 'Aprende la estrategia para VENDER tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Ventas
 
 🎯ESTE TALLER TE AYUDARÁ:
 
 ✅ Cerrar Más ventas por WhatsApp.
 ✅ Automatizar tus conversaciones.
-✅ Ser más rápido al momento de responder*
+✅ Ser más rápido al momento de responder
 ✅ Estar donde esta tu cliente.
 
 🎯 CONTENIDO 100 % PRÁCTICO
@@ -125,7 +125,7 @@ client.sendMessage(from, imagen, MessageType.image,
 ✅Coffe break
 
 
-⏳30 CUPOS DISPONIBLES' })  
+⏳30 CUPOS DISPONIBLES ' })  
 }
 switch (command) {
 	                
