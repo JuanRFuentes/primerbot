@@ -92,7 +92,7 @@ client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam})
 }
 if(body.includes('whatsapp')){        
 const audio = fs.readFileSync('./Media/cursos/datos.ogg')
-client.sendMessage(from, audio, MessageType.audio
+client.sendMessage(from, audio, MessageType.audio,
 {quoted: sam, Mimetype: 'audio/ogg', duration: -03, ptt:true })
 }
 switch (command) {
