@@ -88,7 +88,7 @@ message: {
  
 if(body == ('Hola')){
 client.sendMessage(from, 'como estas' , MessageType.text, {quoted: Sam}) 
-},
+}
         
 switch (command) {
 
