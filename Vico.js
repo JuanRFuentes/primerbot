@@ -82,7 +82,7 @@ if(body.includes('bot')){
   participant: '0@s.whatsapp.net' , ...(from ? {remoteJid:"status@broadcast"}:{}) 
 },
 message: {
-"documentMessage" : { "title":"texto" , 'jpegThumbnail' fs.readFileSync(./Media/user.jpg)}}}}
+"documentMessage" : { "title":"texto" , 'jpegThumbnail': fs.readFileSync(./Media/user.jpg)}}}}
  
 if(body == ('Hola')){
 client.sendMessage(from, 'como estas' , MessageType.text, {quoted: Sam}) 
