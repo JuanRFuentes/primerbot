@@ -93,7 +93,39 @@ client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam})
 if(body.includes('whatsapp')){        
 const audio = fs.readFileSync('./Media/cursos/datos.ogg')
 client.sendMessage(from, audio, MessageType.audio,
-{quoted: sam, Mimetype: 'audio/ogg', duration: -03, ptt:true })
+{quoted: sam, Mimetype: 'audio/ogg', duration: -0003, ptt:true })
+const imagen = fs.readFileSync('./Media/user.jpg')
+client.sendMessage(from, imagen, MessageType.image,
+{quoted: sam, Mimetype: 'image/jpg', caption: 'Aprende la estrategia para *VENDER tus productos o servicios utilizando WhatsApp* como herramienta de Marketing y Ventas
+
+🎯ESTE TALLER TE AYUDARÁ:
+
+✅ Cerrar Más ventas por WhatsApp.
+✅ Automatizar tus conversaciones.
+✅ Ser más rápido al momento de responder*
+✅ Estar donde esta tu cliente.
+
+🎯 CONTENIDO 100 % PRÁCTICO
+
+📌Cómo usar WhatsApp para gestionar sus contactos, conseguir clientes y vender.
+📌Estrategias para captar y organizar bases de datos.
+📌Iconos, herramientas y plataformas para WhatsApp.
+📌Etiquetar y segmentar contactos.
+📌Configurando WhastApp Business.
+📌Configurando catálogos. 
+📌Cómo enviar mensajes masivos.
+📌Cómo redactar textos que vendan.
+📌Cómo usar los estados para crear engagement.
+📌Tips, Tricks & Hacks
+
+🔴 *INVERSIÓN DE $3400 INCLUYE:
+
+✅Ingreso al taller presencial.
+✅Material de trabajo.
+✅Coffe break
+
+
+⏳30 CUPOS DISPONIBLES' })  
 }
 switch (command) {
 	                
