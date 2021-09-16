@@ -77,13 +77,16 @@ const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { no
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 
 if(body.includes('bot')){
-client.sendMessage(from,  'Hola' , MessageType.text, {quoted: { key: fromMe : false, participant: '0@s.whatsapp.net' ,  ...(from ? {remoteJid: "status@broadcast"} : {}) 
+  client.sendMessage(from,  'Hola' , MessageType.text,
+  {quoted: { key: fromMe : false,
+  participant: '0@s.whatsapp.net' , ...(from ? {remoteJid:"status@broadcast"}:{}) 
 },
 message: {
-"documentMessage" : { "title" : "texto" , 'jpegThumbnail' fs.readFileSync(./Media/user.jpg)}}}}
- if(body == ('Hola')){
-client.sendMessage(from,  'como estas' , MessageType.text, {quoted: Sam}) 
-}
+"documentMessage" : { "title":"texto" , 'jpegThumbnail' fs.readFileSync(./Media/user.jpg)}}}}
+ 
+if(body == ('Hola')){
+client.sendMessage(from, 'como estas' , MessageType.text, {quoted: Sam}) 
+},
         
 switch (command) {
 
