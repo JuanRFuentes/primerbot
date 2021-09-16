@@ -91,7 +91,7 @@ client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam})
 }
         
 switch (command) {
-	case "Menu=":
+	case "Menu":
 					redes = ['*Sigeme y te sigo en instagram!* https://www.instagram.com/samu330wabot', '*😊Seamos amigos en facebook!!* https://www.facebook.com/samu330wabot']
 					opcion = redes[Math.floor(Math.random() * redes.length)]
 reply(`*Si no ves la lista de comandos, o no puedes hacer click en el boton, desactiva la funcion de hacer el texto seleccionable en las configuraciones de tu whatsapp Mod.*
@@ -173,6 +173,8 @@ ${opcion}`,
 					}, {})
 				client.relayWAMessage(newmenu, {waitForAck: true})
 				break
+}
+switch (command) {		
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
 break
