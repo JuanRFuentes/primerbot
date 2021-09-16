@@ -87,7 +87,7 @@ message: {
 }
  
 if(body == ('Hola')){
-client.sendMessage(from, 'como estas' , MessageType.text, {quoted: Sam}) 
+client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam}) 
 }
         
 switch (command) {
@@ -95,7 +95,11 @@ switch (command) {
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted : sam})
 break
-
+                
+case 'foto':
+const imagen = fs.readFileSync('./Media/user.jpg')
+client.sendMessage(from, imagen, MessageType.image)
+break 
 }
 
 } catch (e) {
