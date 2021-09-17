@@ -105,9 +105,12 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'TEL;type=CELL;type=VOICE;waid=911234567890:+91 12345 67890\n' // WhatsApp ID + phone number
             + 'END:VCARD'
 		
-  client . sendMessage ( from, vcard, MessageType . contact,
-  {"contactMessage": { displayname : "Jeff" ,  vcard : vcard } })
-	
+  client.sendMessage ( from, vcard, MessageType . contact,
+  {  displayname : "Jeff" ,  vcard : vcard  })
+	// send a location!
+	const id = 'abcd@s.whatsapp.net'	
+  client.sendMessage (id, {degreesLatitude: 24.121231, degreesLongitude: 55.1121221}, MessageType.location)
+
 // send a list message!
 const rows = [
  {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
