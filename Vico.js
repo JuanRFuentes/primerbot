@@ -1,12 +1,8 @@
 const { WAConnection, MessageType, Mimetype, Presence,  MessageOptions } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const prefix = '.'
-export enum Presence {
-    available = 'available', // "online"
-    composing = 'composing', // "typing..."
-    recording = 'recording', // "recording..."
-    paused = 'paused' // stopped typing, back to "online"
-}
+
+
 async function iniciar () { 
         const client = new WAConnection()
 //Aquí el "client" lo pueden cambiar a su gusto. Pero si cambian, tendrán que cambiar todos los "client" por el cambio que hicieron.
@@ -80,7 +76,8 @@ const senderNumber = sender.split("@")[0]
 const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
-
+client.on ('CB:Presence', json => console.log(json.id + " presence is " + json.type))
+await client.requestPresenceUpdate ("xyz@c.us")
 
 if(body.includes('bot')){
   client.sendMessage(from,  'Hola' , MessageType.text,
