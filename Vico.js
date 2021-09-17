@@ -1,7 +1,12 @@
-const { WAConnection, MessageType, Mimetype, MessageOptions } = require('@adiwajshing/baileys');
+const { WAConnection, MessageType, Mimetype, Presence,  MessageOptions } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const prefix = '.'
-
+export enum Presence {
+    available = 'available', // "online"
+    composing = 'composing', // "typing..."
+    recording = 'recording', // "recording..."
+    paused = 'paused' // stopped typing, back to "online"
+}
 async function iniciar () { 
         const client = new WAConnection()
 //Aquí el "client" lo pueden cambiar a su gusto. Pero si cambian, tendrán que cambiar todos los "client" por el cambio que hicieron.
@@ -96,36 +101,7 @@ client.sendMessage(from, audio, MessageType.audio,
 {quoted: sam, Mimetype: 'audio/ogg', duration: -0003, ptt:true })
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
-{quoted: sam, caption: 'Aprende la estrategia para VENDER tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Ventas
-
-🎯ESTE TALLER TE AYUDARÁ:
-
-✅ Cerrar Más ventas por WhatsApp.
-✅ Automatizar tus conversaciones.
-✅ Ser más rápido al momento de responder
-✅ Estar donde esta tu cliente.
-
-🎯 CONTENIDO 100 % PRÁCTICO
-
-📌Cómo usar WhatsApp para gestionar sus contactos, conseguir clientes y vender.
-📌Estrategias para captar y organizar bases de datos.
-📌Iconos, herramientas y plataformas para WhatsApp.
-📌Etiquetar y segmentar contactos.
-📌Configurando WhastApp Business.
-📌Configurando catálogos. 
-📌Cómo enviar mensajes masivos.
-📌Cómo redactar textos que vendan.
-📌Cómo usar los estados para crear engagement.
-📌Tips, Tricks & Hacks
-
-🔴 *INVERSIÓN DE $3400 INCLUYE:
-
-✅Ingreso al taller presencial.
-✅Material de trabajo.
-✅Coffe break
-
-
-⏳30 CUPOS DISPONIBLES ' })  
+{quoted: sam, caption: 'Aprende la estrategia para VENDER tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Venta' })  
 }
 switch (command) {
 	                
