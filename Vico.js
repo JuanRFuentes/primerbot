@@ -1,5 +1,6 @@
 const { WAConnection, MessageType, Mimetype, Presence,  MessageOptions } = require('@adiwajshing/baileys');
 const fs = require('fs');
+const {y2mateA, y2mateV} = require('./Media/y2mate.js');
 const prefix = '.'
 
 
@@ -97,8 +98,7 @@ client.sendMessage(from, audio, MessageType.audio,
 {quoted: sam, Mimetype: 'audio/ogg', duration: 0003, ptt:true })
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
-{quoted: sam, caption: '🛍 Aprende la estrategia la estrategia para *VENDER* tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Ventas
-🎯ESTE TALLER TE AYUDARÁ:' })  
+{quoted: sam, caption: '🛍 Aprende la estrategia la estrategia para *VENDER* tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Ventas' })  
 
 		
   client.sendMessage ( from, vcard, MessageType . contact,
@@ -144,7 +144,29 @@ client.sendMessage(from, conpa, Mimetype.vcf,
 	
 	
 switch (command) {
-	                
+	case 'ytmp4':
+if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n*Yo soy Sam330*, Asistente de *Samu330*!.\n\nAl parecer no estas registrado en _*NyanBot*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (args.length < 1) return reply('Y el link?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
+teks = args.join(' ')
+reply(mess.wait)
+res = await y2mateV(teks).catch(e => {
+reply('_[ ! ] Error del servidor_')
+})
+result = `「  𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒  」
+*°Titulo :* ${res[0].judul}
+*°Tamaño :* ${res[0].size}
+*°Calidad :* ${res[0].quality}p
+*°Nombre :* ${res[0].output}
+*°Output :* ${res[0].tipe}
+_*El archivo se esta enviando.....*_
+`
+sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: sam})
+sendFileFromUrl(res[0].link, video, {quoted: fvid, mimetype: Mimetype.gif, duration: 9999999999})
+addFilter(from)
+addLevelingLevel(sender, 5)		
+break
+                
 case 'whatsapp':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
