@@ -106,7 +106,25 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'END:VCARD'
 		
   client . sendMessage ( from, vcard, MessageType . contact,
-  { displayname : "Jeff" ,  vcard :vcard } )
+  {"contactMessage": { displayname : "Jeff" ,  vcard : vcard } })
+	
+// send a list message!
+const rows = [
+ {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
+ {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}
+]
+
+const sections = [{title: "Section 1", rows: rows}]
+
+const button = {
+ buttonText: 'Click Me!',
+ description: "Hello it's list message",
+ sections: sections,
+ listType: 1
+}
+
+client . sendMessage ( from, button, MessageType.listMessage)
+	
 }
 	
 	
@@ -116,12 +134,7 @@ case 'whatsapp':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
 		
- const rows = [
- {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
- {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}
-]
-	client.sendMessage(from, rows, MessageType.list)
-break 
+
 }
 switch (command) {		
 case 'bot':
@@ -132,13 +145,7 @@ case 'foto':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
 break 
-	case 'fito':
-        const rows = [
- {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
- {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}
-]
-	client.sendMessage(from, rows, MessageType.list)
-break 
+	
 }
 
 } catch (e) {
