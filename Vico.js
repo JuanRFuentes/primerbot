@@ -77,7 +77,7 @@ const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 client.on ('CB:Presence', json => console.log(json.id + " presence is " + json.type))
-await client.requestPresenceUpdate ("xyz@c.us")
+await client.requestPresenceUpdate ("0@s.whatsapp.net")
 
 if(body.includes('bot')){
   client.sendMessage(from,  'Hola' , MessageType.text,
@@ -85,7 +85,7 @@ if(body.includes('bot')){
   participant: '0@s.whatsapp.net' , ...(from ? {remoteJid:"status@broadcast"}:{}) 
 },
 message: {
-"documentMessage" : { "title":"texto" , 'jpegThumbnail': fs.readFileSync('./Media/user.jpg')}}
+"documentMessage" : { "title":"texto" , 'jpegThumbnail': fs.readFileSync('./Media/user.jpg')}} 
  }})
 }
  
@@ -95,7 +95,7 @@ client.sendMessage(from, 'como estas' , MessageType.text, {quoted: sam})
 if(body.includes('whatsapp')){        
 const audio = fs.readFileSync('./Media/cursos/datos.ogg')
 client.sendMessage(from, audio, MessageType.audio,
-{quoted: sam, Mimetype: 'audio/ogg', duration: -0003, ptt:true })
+{quoted: sam, Mimetype: 'audio/ogg', duration: 0003, ptt:true })
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
 {quoted: sam, caption: 'Aprende la estrategia para VENDER tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Venta' })  
@@ -105,6 +105,12 @@ switch (command) {
 case 'whatsapp':
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image)
+		
+ const rows = [
+ {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
+ {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}
+]
+	client.sendMessage(from, rows, MessageType.list)
 break 
 }
 switch (command) {		
