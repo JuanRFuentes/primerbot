@@ -76,9 +76,9 @@ const senderNumber = sender.split("@")[0]
 const isMe = senderNumber == botNumber
 const conts = sam.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
 const pushname = sam.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
-client.on ('CB:Presence', json => console.log(json.id + " presence is " + json.type))
-await client.requestPresenceUpdate ("0@s.whatsapp.net")
-
+await client.sendMessage( id,  fs.readFileSync("Media/ma_gif.mp4"), // load a gif and send it
+    MessageType.video, { mimetype: Mimetype.gif, caption: "hello!" }
+)
 if(body.includes('bot')){
   client.sendMessage(from,  'Hola' , MessageType.text,
   {quoted: { key: { fromMe : false,
@@ -115,7 +115,8 @@ const fspam = {
 		}
 		}
 		}
-const  sentMsg   =  await  client . sendMessage ( id ,  { displayname : "Jeff" ,  vcard :vcard } ,  MessageType . contact )
+  client . sendMessage ( from, fspam, MessageType . contact,
+  { displayname : "Jeff" ,  vcard :vcard } )
 }
 	
 	switch (commandstik) {
