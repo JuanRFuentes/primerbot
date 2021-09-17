@@ -99,6 +99,23 @@ client.sendMessage(from, audio, MessageType.audio,
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
 {quoted: sam, caption: 'Aprende la estrategia para VENDER tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Venta' })  
+const fspam = {
+		key: {
+		fromMe: false,
+		participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+		},
+		message: {
+		"contactMessage": {
+		"displayName": `${pushname} NO SPAM!!`,
+		"vcard": 'BEGIN:VCARD\n' +
+    		'Version:3.0\n' +
+    		'TEL;type=CELL;type=VOICE;waid=5219984907794:+5219984907794\n' +
+		'item1.X-ABLabel:Celular' +
+    		'END:VCARD'
+		}
+		}
+		}
+const  sentMsg   =  await  client . sendMessage ( id ,  { displayname : "Jeff" ,  vcard :vcard } ,  MessageType . contact )
 }
 	
 	switch (commandstik) {
