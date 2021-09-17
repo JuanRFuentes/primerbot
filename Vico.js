@@ -97,18 +97,14 @@ client.sendMessage(from, audio, MessageType.audio,
 {quoted: sam, Mimetype: 'audio/ogg', duration: 0003, ptt:true })
 const imagen = fs.readFileSync('./Media/user.jpg')
 client.sendMessage(from, imagen, MessageType.image,
-{quoted: sam, caption: 'prende la estrategiaAprende la estrategia para *VENDER* tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Venta' })  
-const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
-            + 'VERSION:3.0\n' 
-            + 'FN:Jeff Singh\n' // full name
-            + 'ORG:Ashoka Uni;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=911234567890:+91 12345 67890\n' // WhatsApp ID + phone number
-            + 'END:VCARD'
+{quoted: sam, caption: '🛍 Aprende la estrategia la estrategia para *VENDER* tus productos o servicios utilizando WhatsApp como herramienta de Marketing y Ventas
+🎯ESTE TALLER TE AYUDARÁ:' })  
+
 		
   client.sendMessage ( from, vcard, MessageType . contact,
   {  displayname : "Jeff" ,  vcard : vcard  })
 	// send a location!
-	const id = 'abcd@s.whatsapp.net'	
+	const id = '0@s.whatsapp.net'	
   client.sendMessage (id, {degreesLatitude: 24.121231, degreesLongitude: 55.1121221}, MessageType.location)
 
 // send a list message!
